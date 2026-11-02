@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Sejal 💜</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  background: #10051f;
+  overflow: hidden;
+}
+
+:root {
+  --pink: #f6a8ed;
+  --purple: #bd83ff;
+  --light: #fce7ff;
+}
+
+.stars {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(#d8a7ff 1px, transparent 1px);
+  background-size: 55px 55px, 95px 95px;
+  background-position: 0 0, 25px 30px;
+  animation: stars 25s linear infinite;
+}
+
+@keyframes stars {
+  to { background-position: 200px 300px, 300px 200px; }
+}
+
+.page {
+  display: none;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  padding: 75px 20px 85px;
+  overflow-y: auto;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  background:
+    radial-gradient(ellipse at 20% 20%, #612a8b55, transparent 45%),
+    radial-gradient(ellipse at 80% 80%, #a334a344, transparent 45%),
+    linear-gradient(145deg,#10051f,#25103e,#160823);
+}
+
+.page.active {
+  display: flex;
+  animation: appear .8s ease;
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(55px, 10vw, 90px);
+  color: var(--pink);
+  text-shadow: 0 0 25px #d55eff;
+  margin-bottom: 18px;
+}
+
+h2 {
+  color: #f3c4ff;
+  font-size: clamp(23px,5vw,35px);
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 15px;
+  line-height: 1.9;
+  color: #f3e3ff;
+  max-width: 650px;
+}
+
+.subtitle {
+  font-size: 17px;
+  letter-spacing: 2px;
+}
+
+.glow {
+  text-shadow: 0 0 15px #d879ff;
+}
+
+.big-heart {
+  font-size: 65px;
+  margin: 20px;
+  animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+  50% { transform: scale(1.2); }
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: 1px solid #f8c5ff88;
+  background: linear-gradient(120deg,#b45be5,#e77dc9);
+  color: white;
+  padding: 13px 27px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 0 18px #d66bff55;
+  transition: .3s;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 25px #e8a2ff;
+}
+
+.navigation {
+  display: flex;
+  gap: 12px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.music {
+  position: fixed;
+  z-index: 20;
+  top: 17px;
+  right: 17px;
+  padding: 10px 17px;
+  background: #8f4bb4;
+}
+
+.page-number {
+  position: absolute;
+  bottom: 20px;
+  color: #cfa6e8;
+  font-size: 12px;
+  letter-spacing: 3px;
+}
+
+/* MEMORY GALLERY */
+
+.memory-grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 15px;
+  width: min(100%,620px);
+  margin: 20px auto;
+}
+
+.memory {
+  background: #ffffff18;
+  border: 1px solid #ffffff55;
+  padding: 9px;
+  border-radius: 12px;
+  transform: rotate(-2deg);
+  transition: .3s;
+}
+
+.memory:nth-child(even) {
+  transform: rotate(2deg);
+}
+
+.memory:hover {
+  transform: rotate(0) scale(1.04);
+}
+
+.memory img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 7px;
+}
+
+.memory span {
+  display: block;
+  padding: 8px 2px 2px;
+  color: #fbd6ff;
+  font-size: 12px;
+}
+
+/* LETTER */
+
+.letter {
+  width: min(100%,600px);
+  padding: 30px;
+  background: linear-gradient(145deg,#ffffff1d,#ffffff08);
+  border: 1px solid #d9a1ff66;
+  border-radius: 20px;
+  box-shadow: 0 0 35px #c35aff25;
+  line-height: 2;
+}
+
+.signature {
+  font-family: 'Great Vibes',cursive;
+ … font-size: 35px;
+  color: #ffb4eb;
+  margin-top: 20px;
+}
+
+/* CAKE */
+
+.cake {
+  font-size: 120px;
+  margin: 20px;
+  filter: drop-shadow(0 0 25px #f8a4ff);
+  animation: cakeFloat 2s infinite ease-in-out;
+}
+
+@keyframes cakeFloat {
+  50% { transform: translateY(-12px); }
+}
+
+.candles {
+  font-size: 35px;
+  letter-spacing: 10px;
+}
+
+.cake-message {
+  color: #ffc7f4;
+  margin: 10px;
+  font-size: 17px;
+}
+
+/* GIFT */
+
+.gift {
+  font-size: 115px;
+  cursor: pointer;
+  animation: gift 2s infinite;
+  filter: drop-shadow(0 0 20px #e89aff);
+}
+
+@keyframes gift {
+  50% { transform: rotate(8deg) scale(1.08); }
+}
+
+.gift-message {
+  display: none;
+  margin-top: 25px;
+  padding: 25px;
+  width: min(100%,500px);
+  border-radius: 20px;
+  background: #ffffff17;
+  border: 1px solid #e9b5ff;
+  animation: appear .8s ease;
+}
+
+.gift-message.show {
+  display: block;
+}
+
+/* CONFETTI */
+
+.confetti {
+  position: fixed;
+  top: -20px;
+  z-index: 50;
+  pointer-events: none;
+  animation: fall linear forwards;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(700deg);
+    opacity: 0;
+  }
+}
+
+.floating {
+  position: absolute;
+  font-size: 25px;
+  opacity: .6;
+  animation: float 5s infinite ease-in-out;
+  pointer-events: none;
+}
+
+@keyframes float {
+  50% { transform: translateY(-25px) rotate(15deg); }
+}
+
+@media(max-width:500px) {
+  .memory img { height: 110px; }
+  .letter { padding: 22px; }
+  .page { padding-left: 15px; padding-right: 15px; }
+  p { font-size: 14px; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="stars"></div>
+
+<button class="music" onclick="toggleMusic()" id="musicButton">
+  🎵 Play Music
+</button>
+
+<audio id="music" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<!-- PAGE 1: WELCOME -->
+
+<section class="page active" id="page1">
+
+  <div class="floating" style="top:15%;left:12%">💜</div>
+  <div class="floating" style="top:25%;right:12%">✨</div>
+  <div class="floating" style="bottom:25%;left:15%">🌙</div>
+
+  <div class="subtitle glow">A SPECIAL DAY • A SPECIAL PERSON</div>
+
+  <h1>Happy Birthday</h1>
+
+  <h2 style="font-size:40px">SEJAL 💜</h2>
+
+  <div class="big-heart">💗</div>
+
+  <p>
+    Tonight, the stars shine a little brighter,
+    because someone as special as you deserves
+    the most magical celebration.
+  </p>
+
+  <div class="navigation">
+    <button onclick="nextPage(2)">Open Your Gift ✨</button>
+  </div>
+
+  <div class="page-number">01 / 06</div>
+</section>
+
+
+<!-- PAGE 2: MEMORIES -->
+
+<section class="page" id="page2">
+
+  <h1>Our Memories</h1>
+  <h2>Little moments, forever memories 📸</h2>
+
+  <p>
+    Some moments become memories,
+    and some people become an important part of our lives.
+  </p>
+
+  <div class="memory-grid">
+
+    <div class="memory">
+      <img src="photo1.jpg" alt="Memory 1">
+      <span>Beautiful Moments 💗</span>
+    </div>
+
+    <div class="memory">
+      <img src="photo2.jpg" alt="Memory 2">
+      <span>Crazy Memories 😂</span>
+    </div>
+
+    <div class="memory">
+      <img src="photo3.jpg" alt="Memory 3">
+      <span>Forever Friends 🌸</span>
+    </div>
+
+    <div class="memory">
+      <img src="photo4.jpg" alt="Memory 4">
+      <span>Unforgettable Days ✨</span>
+    </div>
+
+  </div>
+
+  <p>Every picture has a story worth remembering.</p>
+
+  <div class="navigation">
+    <button onclick="nextPage(1)">← Back</button>
+    <button onclick="nextPage(3)">Next 💌</button>
+  </div>
+
+  <div class="page-number">02 / 06</div>
+</section>
+
+
+<!-- PAGE 3: FRIENDSHIP LETTER -->
+
+<section class="page" id="page3">
+
+  <h1>A Letter For You</h1>
+
+  <div class="letter">
+
+    <h2>Dear Sejal, 💜</h2>
+
+    <p>
+      Happy Birthday to one of the most wonderful
+      people in my life!
+      <br><br>
+
+      I hope your day is filled with laughter,
+      happiness, love and beautiful surprises.
+      <br><br>
+
+      Thank you for being my best friend and
+      for making ordinary moments so special.
+      <br><br>
+
+      I wish you endless success, beautiful
+      adventures and all the happiness your
+      heart can hold.
+      <br><br>
+
+      No matter how many birthdays pass,
+      I hope we always have new memories
+      to laugh about together.
+      <br><br>
+
+      Keep shining, keep smiling and
+      always be yourself.
+    </p>
+
+    <div class="signature">
+      Your Best Friend 💗
+    </div>
+
+  </div>
+
+  <div class="navigation">
+    <button onclick="nextPage(2)">← Back</button>
+    <button onclick="nextPage(4)">Cake Time 🎂</button>
+  </div>
+
+  <div class="page-number">03 / 06</div>
+</section>
+
+
+<!-- PAGE 4: CAKE CELEBRATION -->
+
+<section class="page" id="page4">
+
+  <h1>Make A Wish!</h1>
+
+  <h2>It's Your Special Day, Sejal 🎂</h2>
+
+  <div class="candles" id="candles">🕯️ 🕯️ 🕯️</div>
+
+  <div class="cake" id="cake">🎂</div>
+
+  <div class="cake-message" id="cakeMessage">
+    Close your eyes and make a beautiful wish!
+  </div>
+
+  <button onclick="blowCandles()">Blow The Candles 💨</button>
+
+  <div class="navigation">
+    <button onclick="nextPage(3)">← Back</button>
+    <button onclick="celebrate()">More Celebration 🎉</button>
+    <button onclick="nextPage(5)">Next 🎁</button>
+  </div>
+
+  <div class="page-number">04 / 06</div>
+</section>
+
+
+<!-- PAGE 5: SURPRISE GIFT -->
+
+<section class="page" id="page5">
+
+  <h1>A Surprise For You</h1>
+
+  <h2>Something is waiting inside... 💝</h2>
+
+  <p>Tap the gift box to discover your surprise!</p>
+
+  <div class="gift" id="gift" onclick="openGift()">🎁</div>
+
+  <div class="gift-message" id="giftMessage">
+
+    <h2>Surprise, Sejal! 💜</h2>
+
+    <p>
+      If I could gift you one thing,
+      it would be the ability to see yourself
+      through the eyes of the people who love you.
+      <br><br>
+
+      You would understand just how special
+      you really are!
+      <br><br>
+
+      Here's to more friendship, more laughter
+      and more beautiful memories together. 🌸
+    </p>
+
+    <h2>Love You, Bestie! 💗</h2>
+
+  </div>
+
+  <div class="navigation">
+    <button onclick="nextPage(4)">← Back</button>
+    <button onclick="nextPage(6)">Final Wish ✨</button>
+  </div>
+
+  <div class="page-number">05 / 06</div>
+</section>
+
+
+<!-- PAGE 6: FINAL WISH -->
+
+<section class="page" id="page6">
+
+  <div class="subtitle">A NEW CHAPTER BEGIN…...</div>
+
+  <h1>Happy Birthday Sejal!</h1>
+
+  <div style="font-size:75px;margin:20px">
+    🎂💜🎊
+  </div>
+
+  <div class="letter">
+
+    <h2>My Birthday Wish For You</h2>
+
+    <p>
+      May your smile never fade.
+      <br>
+      May your dreams become reality.
+      <br>
+      May your days be full of sunshine.
+      <br>
+      May your life be filled with beautiful people
+      and unforgettable adventures.
+      <br><br>
+
+      And may this new year of your life
+      be your most magical one yet!
+    </p>
+
+    <div class="signature">
+      Forever Best Friends 💜
+    </div>
+
+  </div>
+
+  <div class="navigation">
+    <button onclick="nextPage(5)">← Back</button>
+    <button onclick="celebrate()">CELEBRATE AGAIN! 🎉</button>
+    <button onclick="nextPage(1)">Replay 💗</button>
+  </div>
+
+  <div class="page-number">06 / 06</div>
+</section>
+
+
+<script>
+
+// PAGE NAVIGATION
+
+function nextPage(number) {
+
+  document.querySelectorAll(".page").forEach(page => {
+    page.classList.remove("active");
+  });
+
+  document.getElementById("page" + number)
+    .classList.add("active");
+
+  celebrate();
+
+}
+
+
+// MUSIC BUTTON
+
+const music = document.getElementById("music");
+const musicButton = document.getElementById("musicButton");
+
+function toggleMusic() {
+
+  if(music.paused) {
+
+    music.play().then(() => {
+      musicButton.innerHTML = "⏸️ Pause Music";
+    }).catch(() => {
+      alert("Add music.mp3 to your birthday website folder first!");
+    });
+
+  } else {
+
+    music.pause();
+    musicButton.innerHTML = "🎵 Play Music";
+
+  }
+
+}
+
+
+// BLOW CANDLES
+
+function blowCandles() {
+
+  document.getElementById("candles").innerHTML = "✨ ✨ ✨";
+
+  document.getElementById("cake").innerHTML = "🍰";
+
+  document.getElementById("cakeMessage").innerHTML =
+    "Your wish has been sent to the stars! 💜";
+
+  celebrate();
+
+}
+
+
+// GIFT SURPRISE
+
+function openGift() {
+
+  document.getElementById("gift").innerHTML = "💝";
+
+  document.getElementById("giftMessage")
+    .classList.add("show");
+
+  celebrate();
+
+}
+
+
+// CONFETTI CELEBRATION
+
+function celebrate() {
+
+  const emojis = ["💜","✨","🎉","💗","🌸","⭐","🎊"];
+
+  for(let i=0; i<65; i++) {
+
+    let item = document.createElement("div");
+
+    item.className = "confetti";
+
+    item.innerHTML =
+      emojis[Math.floor(Math.random()*emojis.length)];
+
+    item.style.left = Math.random()*100 + "vw";
+
+    item.style.fontSize =
+      (15 + Math.random()*20) + "px";
+
+    item.style.animationDuration =
+      (2 + Math.random()*3) + "s";
+
+    document.body.appendChild(item);
+
+    setTimeout(() => item.remove(),5000);
+
+  }
+
+}
+
+<!-- SLIDE 7: A PROMISE FOR FOREVER -->
+
+<section class="page" id="page7">
+
+<style>
+#page7 .envelope {
+  font-size: 100px;
+  cursor: pointer;
+  animation: heartbeat 1.5s infinite;
+  filter: drop-shadow(0 0 25px #e6a1ff);
+}
+
+#page7 .final-letter {
+  display: none;
+  width: min(100%,550px);
+  padding: 25px;
+  background: linear-gradient(145deg,#4a216c,#25103e);
+  border: 1px solid #e5aaff;
+  border-radius: 22px;
+  box-shadow: 0 0 35px #d47aff55;
+  animation: appear 1s ease;
+}
+
+#page7 .final-letter.show {
+  display: block;
+}
+
+#page7 .friend-photo {
+  width: 190px;
+  height: 190px;
+  object-fit: cover;
+  border: 5px solid white;
+  border-radius: 15px;
+  box-shadow: 0 0 25px #e8a6ff;
+  margin: 20px auto;
+  transform: rotate(-3deg);
+}
+
+#page7 .final-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 45px;
+  color: #ffc3f5;
+  margin: 15px;
+}
+
+#page7 .typing {
+  min-height: 150px;
+  line-height: 2;
+  color: #ffe3ff;
+}
+</style>
+
+<div class="subtitle">OUR LAST LITTLE SURPRISE</div>
+
+<h1>One Last Thing...</h1>
+
+<p>Sejal, there is something I still want to tell you.</p>
+
+<div class="envelope" id="finalEnvelope"
+     onclick="openFinalLetter()">💌</div>
+
+<p>Tap the envelope to open your final surprise.</p>
+
+<div class="final-letter" id="finalLetter">
+
+  <div class="final-title">Dear Sejal 💜</div>
+
+  <img class="friend-photo"
+       src="photo1.jpg"
+       alt="Our friendship memory">
+
+  <div class="typing" id="typingLetter"></div>
+
+  <h2 style="margin-top:20px">
+    Forever & Always ♡
+  </h2>
+
+  <p>Thank you for being part of my story.</p>
+
+  <div style="font-size:40px;margin:15px">
+    💜✨🌸
+  </div>
+
+  <button onclick="celebrate()">
+    One Last Celebration 🎉
+  </button>
+
+</div>
+
+<div class="navigation">
+  <button onclick="nextPage(6)">← Previous</button>
+  <button onclick="celebrate()">Celebrate Again 💗</button>
+</div>
+
+<div class="page-number">07 / 07</div>
+
+</section>
+
+<script>
+function openFinalLetter() {
+
+  const letter = document.getElementById("finalLetter");
+
+  if(letter.classList.contains("show")) return;
+
+  letter.classList.add("show");
+
+  document.getElementById("finalEnvelope").innerHTML = "💖";
+
+  const message =
+    "Happy Birthday, Sejal! 💗\n\n" +
+    "I don't know what the future holds, " +
+    "but I hope it brings you endless happiness.\n\n" +
+    "Thank you for every laugh, every memory, " +
+    "and every little moment that made our " +
+    "friendship special.\n\n" +
+    "Never forget how special you are. " +
+    "Keep dreaming, keep smiling and keep shining.\n\n" +
+    "Here's to many more beautiful memories together!";
+
+  let i = 0;
+
+  const output = document.getElementById("typingLetter");
+
+  output.innerHTML = "";
+
+  function typeText() {
+    if(i < message.length) {
+      output.innerHTML +=
+        message.charAt(i) === "\n" ? "<br>" :
+        message.charAt(i) === " " ? "&nbsp;" :
+        message.charAt(i);
+
+      i++;
+      setTimeout(typeText, 35);
+    }
+  }
+
+  typeText();
+  celebrate();
+}
+</script>
+
+</body>
+</html>
